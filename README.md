@@ -7,13 +7,13 @@
 - Spring Securityでログイン機能を追加。
 
 ## 構成要件
-Java 17  
-Gradle 7.4.1  
-Spring Boot 2.6.7  
-Docker Desktop 4.8.7  
-Docker Compose 2.5.0  
-MySQL 8.0  
-MyBatis Spring Boot Starter 2.2.2  
+- Java 17  
+- Gradle 7.4.1  
+- Spring Boot 2.6.7  
+- Docker Desktop 4.8.7  
+- Docker Compose 2.5.0  
+- MySQL 8.0  
+- MyBatis Spring Boot Starter 2.2.2  
 
 ## 主な機能
 - リスト：データベースの要素をSQLで取得したものを日付昇順で表示
