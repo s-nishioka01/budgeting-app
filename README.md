@@ -9,7 +9,7 @@
 ## 構成要件
 - Java 17  
 - Gradle 7.4.1  
-- Spring Boot 2.6.7  
+- Spring Boot 2.7.4  
 - Docker Desktop 4.8.7  
 - Docker Compose 2.5.0  
 - MySQL 8.0  
