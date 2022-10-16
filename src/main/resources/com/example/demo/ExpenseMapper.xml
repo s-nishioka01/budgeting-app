@@ -12,4 +12,7 @@
     <select id="getTotalPrice" resultType="int">
     	SELECT SUM(price) FROM expenses
     </select>
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+    	INSERT INTO expenses (itemName,price,dateOfPayment) VALUES (#{itemName}, #{price}, #{dateOfPayment})
+    </insert>
 </mapper>

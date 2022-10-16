@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.example.demo.entity.Expense;
+import com.example.demo.form.ExpenseForm;
 import com.example.demo.mapper.ExpenseMapper;
 
 public class ExpenseService {
@@ -26,6 +27,10 @@ public class ExpenseService {
 
 	public int getTotalPrice() {
 		return expenseMapper.getTotalPrice();
+	}
+
+	public void saveExpenseList(ExpenseForm expenseForm) {
+		expenseMapper.save(expenseForm);
 	}
 
 }

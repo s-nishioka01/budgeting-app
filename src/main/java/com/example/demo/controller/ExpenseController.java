@@ -1,9 +1,20 @@
 package com.example.demo.controller;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.demo.form.ExpenseForm;
 import com.example.demo.service.ExpenseService;
 
 public class ExpenseController {
@@ -21,6 +32,27 @@ public class ExpenseController {
 		model.addAttribute("totalPrice", expenseService.getTotalPrice());
 		model.addAttribute("error", "");
 		return "top";
+	}
+
+	@GetMapping("/new")
+	public String newExpense(Model model) {
+		LocalDateTime today = LocalDateTime.now();
+		model.addAttribute("today", today.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+		return "new";
+	}
+
+	@PostMapping("/new")
+	public String create(@Validated @ModelAttribute ExpenseForm expenseForm, BindingResult result, Model model) {
+		if (result.hasErrors()) {
+			List<String> errorList = new ArrayList<String>();
+			for (ObjectError error : result.getAllErrors()) {
+				errorList.add(error.getDefaultMessage());
+			}
+			model.addAttribute("validationError", errorList);
+			return "new";
+		}
+		expenseService.saveExpenseList(expenseForm);
+		return "redirect:/index";
 	}
 
 }

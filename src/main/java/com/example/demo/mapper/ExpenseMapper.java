@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.example.demo.entity.Expense;
+import com.example.demo.form.ExpenseForm;
 
 public interface ExpenseMapper {
 
@@ -12,5 +13,7 @@ public interface ExpenseMapper {
 	Optional<Expense> findOne(int id);
 
 	int getTotalPrice();
+
+	void save(ExpenseForm expenseForm);
 
 }
