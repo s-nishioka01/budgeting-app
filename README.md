@@ -7,7 +7,7 @@
 
 ## 構成要件
 - Java 11  
-- Gradle 7.4.1  
+- Gradle 7.5  
 - Spring Boot 2.7.4  
 - Docker Desktop 4.8.7  
 - Docker Compose 2.5.0  
