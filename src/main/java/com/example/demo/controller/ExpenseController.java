@@ -70,4 +70,21 @@ public class ExpenseController {
 		return "redirect:/index";
 	}
 
+	@PostMapping("/update/{id}")
+	public String update(@PathVariable int id, @Validated @ModelAttribute ExpenseForm expenseForm, BindingResult result,
+			Model model) throws Exception {
+		if (result.hasErrors()) {
+			List<String> errorList = new ArrayList<String>();
+			for (ObjectError error : result.getAllErrors()) {
+				errorList.add(error.getDefaultMessage());
+			}
+			model.addAttribute("expense", expenseService.findOne(id));
+			model.addAttribute("validationError", errorList);
+			return "update";
+		}
+		expenseForm.setId(id);
+		expenseService.updateExpenseList(expenseForm);
+		return "redirect:/index";
+	}
+
 }
