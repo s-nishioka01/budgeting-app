@@ -4,10 +4,9 @@
 - 購入したもののリストを日付昇順で表示。新規登録(Create)、編集(Update)、削除(Delete)が可能。
 - サーバーサイドはPurchase.java, PurchaseController.java, PurchaseService.java, PurchaseMapper.java, PurchaseMapper.xml
 - フロントエンドはトップページがindex.html, 新規登録用のフォームがnew.html, 編集用フォームがupdate.html, 削除確認用フォームがdelete.html
-- Spring Securityでログイン機能を追加。
 
 ## 構成要件
-- Java 17  
+- Java 11  
 - Gradle 7.4.1  
 - Spring Boot 2.7.4  
 - Docker Desktop 4.8.7  
