@@ -15,4 +15,7 @@
     <insert id="save" useGeneratedKeys="true" keyProperty="id">
     	INSERT INTO expenses (itemName,price,dateOfPayment) VALUES (#{itemName}, #{price}, #{dateOfPayment})
     </insert>
+    <update id="update">
+    	UPDATE expenses SET dateOfPayment = #{dateOfPayment}, itemName = #{itemName}, price = #{price} WHERE id = #{id} 
+    </update>
 </mapper>

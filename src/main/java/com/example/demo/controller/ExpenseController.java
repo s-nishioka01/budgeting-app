@@ -12,6 +12,7 @@ import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.form.ExpenseForm;
@@ -39,6 +40,20 @@ public class ExpenseController {
 		LocalDateTime today = LocalDateTime.now();
 		model.addAttribute("today", today.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
 		return "new";
+	}
+
+	@GetMapping("/update/{id}")
+	public String updateExpense(@PathVariable int id, Model model) {
+		try {
+			model.addAttribute("expense", expenseService.findOne(id));
+			return "update";
+
+		} catch (Exception e) {
+			model.addAttribute("expenseList", expenseService.getExpenseList());
+			model.addAttribute("totalPrice", expenseService.getTotalPrice());
+			model.addAttribute("error", "データが登録されていません");
+			return "index";
+		}
 	}
 
 	@PostMapping("/new")

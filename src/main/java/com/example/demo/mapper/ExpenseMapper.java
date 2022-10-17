@@ -16,4 +16,6 @@ public interface ExpenseMapper {
 
 	void save(ExpenseForm expenseForm);
 
+	void update(ExpenseForm expenseForm);
+
 }

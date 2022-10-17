@@ -33,4 +33,8 @@ public class ExpenseService {
 		expenseMapper.save(expenseForm);
 	}
 
+	public void updateExpenseList(ExpenseForm expenseForm) {
+		expenseMapper.update(expenseForm);
+	}
+
 }
