@@ -56,6 +56,20 @@ public class ExpenseController {
 		}
 	}
 
+	@GetMapping("/delete/{id}")
+	public String deleteExpense(@PathVariable int id, Model model) {
+		try {
+			model.addAttribute("expense", expenseService.findOne(id));
+			return "delete";
+
+		} catch (Exception e) {
+			model.addAttribute("expenseList", expenseService.getExpenseList());
+			model.addAttribute("totalPrice", expenseService.getTotalPrice());
+			model.addAttribute("error", "データが登録されていません");
+			return "index";
+		}
+	}
+
 	@PostMapping("/new")
 	public String create(@Validated @ModelAttribute ExpenseForm expenseForm, BindingResult result, Model model) {
 		if (result.hasErrors()) {
@@ -84,6 +98,12 @@ public class ExpenseController {
 		}
 		expenseForm.setId(id);
 		expenseService.updateExpenseList(expenseForm);
+		return "redirect:/index";
+	}
+
+	@PostMapping("/delete/{id}")
+	public String destroy(@PathVariable int id) {
+		expenseService.deleteExpenseList(id);
 		return "redirect:/index";
 	}
 

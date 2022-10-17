@@ -37,4 +37,8 @@ public class ExpenseService {
 		expenseMapper.update(expenseForm);
 	}
 
+	public void deleteExpenseList(int id) {
+		expenseMapper.delete(id);
+	}
+
 }

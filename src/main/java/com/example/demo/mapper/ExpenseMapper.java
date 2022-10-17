@@ -18,4 +18,6 @@ public interface ExpenseMapper {
 
 	void update(ExpenseForm expenseForm);
 
+	void delete(int id);
+
 }

@@ -18,4 +18,7 @@
     <update id="update">
     	UPDATE expenses SET dateOfPayment = #{dateOfPayment}, itemName = #{itemName}, price = #{price} WHERE id = #{id} 
     </update>
+    <delete id="delete">
+    	DELETE FROM expenses WHERE id = #{id}
+   	</delete>
 </mapper>
