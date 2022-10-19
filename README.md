@@ -1,6 +1,6 @@
 # 家計管理アプリ
 ## アプリケーションの内容
-- 簡単な家計管理アプリ
+- 支出や購入履歴を管理するための家計管理アプリ
 - 購入したもののリストを日付昇順で表示。新規登録(Create)、編集(Update)、削除(Delete)が可能。
 - サーバーサイドはPurchase.java, PurchaseController.java, PurchaseService.java, PurchaseMapper.java, PurchaseMapper.xml
 - フロントエンドはトップページがindex.html, 新規登録用のフォームがnew.html, 編集用フォームがupdate.html, 削除確認用フォームがdelete.html
