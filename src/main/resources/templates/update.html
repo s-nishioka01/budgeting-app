@@ -8,16 +8,16 @@
 <body>
 	<div class="main">
 		<div class="crud-form update-form">
-			<h2>編集フォーム</h2>
+			<h2>支出 編集</h2>
 			<ul class="validation-message" th:if="${validationError}" th:each="error: ${validationError}">
 				<li th:text="${error}"></li>
 			</ul>
 			<form method="post" th:object="${purchase}" th:action="@{/update/} + ${purchase.id}">
-				<p>日付</p>
+				<p>支払日</p>
 				<input type="date" th:field="*{purchaseDate}">
 				<p>商品名</p>
 				<input type="text" th:field="*{itemName}">
-				<p>値段</p>
+				<p>金額</p>
 				<input type="text" th:field="*{price}">
 				<div class="submit-btn">
 					<input type="submit" value="変更">

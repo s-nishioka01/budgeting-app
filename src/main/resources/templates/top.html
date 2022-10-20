@@ -16,9 +16,9 @@
 		<div class="table-section">
 			<table class="purchase-table">
 				<tr>
-					<th>日付</th>
-					<th>商品</th>
-					<th>値段</th>
+					<th>支払日</th>
+					<th>商品名</th>
+					<th>金額</th>
 					<th>編集/削除</th>
 				</tr>
 				<tr th:each="purchase:${purchaseList}">
@@ -37,7 +37,7 @@
 			</table>
 			<table class="total-price-table">
 				<tr>
-					<th>合計金額</th>
+					<th>支出合計</th>
 				</tr>
 				<tr>
 					<td th:text="'¥' + ${totalPrice}"></td>
@@ -45,7 +45,7 @@
 			</table>
 		</div>
 		<div class="btn create-link-btn">
-			<a href="/new">新規登録</a>
+			<a href="/new">新規追加</a>
 		</div>
 	</div>
 </body>

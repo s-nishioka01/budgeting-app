@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>新規作成</title>
+	<title>新規追加</title>
 	<meta charset="UTF-8">
 	<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div class="main">
 		<div class="crud-form create-form">
-			<h2>新規作成フォーム</h2>
+			<h2>支出 新規追加</h2>
 			<ul class="validation-message" th:if="${validationError}" th:each="error: ${validationError}">
 				<li th:text="${error}"></li>
 			</ul>
 			<form method="post" action="#" th:action="@{/new}">
-				<p>日付</p>
+				<p>支払日</p>
 				<input type="date" name="purchaseDate" th:value="${today}">
 				<p>商品名</p>
 				<input type="text" name="itemName">
-				<p>値段</p>
+				<p>金額</p>
 				<input type="number" name="price" value=" ">
 				<div class="submit-btn">
 					<input type="submit" value="登録">
