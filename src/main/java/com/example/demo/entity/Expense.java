@@ -16,7 +16,6 @@ public class Expense {
 	private LocalDate expenseDate;
 
 	public Expense(int id, String itemName, int price, LocalDate expenseDate) {
-		super();
 		this.id = id;
 		this.itemName = itemName;
 		this.price = price;
