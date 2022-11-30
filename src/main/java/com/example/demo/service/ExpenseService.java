@@ -3,11 +3,13 @@ package com.example.demo.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.Expense;
 import com.example.demo.form.ExpenseForm;
 import com.example.demo.mapper.ExpenseMapper;
 
+@Service
 public class ExpenseService {
 
 	private final ExpenseMapper expenseMapper;
